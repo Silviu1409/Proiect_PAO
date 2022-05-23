@@ -23,8 +23,8 @@ public class ClientRepo {
         }
     }
 
-    public List<Client> citește(){
-        List<Client> clienți = new ArrayList<>();
+    public Set<Client> citește(){
+        Set<Client> clienți = new HashSet<>(Collections.emptySet());
         String query = "select * from clienți";
         try(Statement statement = ConexiuneBD.getInstance().createStatement()){
             ResultSet res = statement.executeQuery(query);

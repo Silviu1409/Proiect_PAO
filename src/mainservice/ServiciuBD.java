@@ -30,8 +30,8 @@ public class ServiciuBD {
         this.adresăRepo = new AdresăRepo();
     }
 
-    public List<Client> obțineclienți() {
-        List<Client> clienți = clientRepo.citește();
+    public Set<Client> obțineclienți() {
+        Set<Client> clienți = clientRepo.citește();
         for(Client client: clienți){
             int id_adresă = clientRepo.obțineid_adresă(client.getCNP());
             Adresă adresă = adresăRepo.citeșteadresă(id_adresă);
@@ -52,7 +52,7 @@ public class ServiciuBD {
         return tranzacțieRepo.citește();
     }
 
-    public void setclienți(List<Client> clienți){
+    public void setclienți(Set<Client> clienți){
         bancă.setClienți(clienți);
     }
 
@@ -89,7 +89,7 @@ public class ServiciuBD {
 
     public void settranzacții(List<Tranzacție> tranzacții){
         for(Tranzacție tranzacție: tranzacții){
-            List<Client> clienți = bancă.getClienți();
+            Set<Client> clienți = bancă.getClienți();
             boolean cont_găsit = false;
             for(Client client: clienți){
                 for(Cont cont: client.getConturi()){
@@ -144,27 +144,6 @@ public class ServiciuBD {
 
         System.out.println("Clientul a fost adăugat!");
     }
-
-    /*
-    public void actualizareclient(){
-        System.out.println("Introdu detaliile clientului.");
-        System.out.print("Nume: ");
-        String nume = input.nextLine();
-        System.out.print("Prenume: ");
-        String prenume = input.nextLine();
-        System.out.print("CNP: ");
-        String CNP = input.nextLine();
-        System.out.print("Email: ");
-        String email = input.nextLine();
-        System.out.print("Număr de telefon: ");
-        String nr_tel = input.nextLine();
-
-        Client client = new Client(nume, prenume, CNP, email, nr_tel, null);
-        clientRepo.actualizează(client);
-
-        System.out.println("Clientul a fost actualizat!");
-    }
-    */
 
     public void afișaredateclient(){
         System.out.print("CNP client: ");

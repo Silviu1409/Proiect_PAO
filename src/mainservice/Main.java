@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+
     /*
     // Etapa 2 - persistență folosind fișiere CSV
     public static void main(String[] args) throws IOException {
@@ -183,5 +184,4 @@ public class Main {
                 input.nextLine();
         }
     }
-
 }

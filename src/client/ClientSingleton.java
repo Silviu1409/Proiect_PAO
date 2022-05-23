@@ -8,7 +8,7 @@ import java.util.*;
 public class ClientSingleton {
 
     private static ClientSingleton instanță = null;
-    private List<Client> listă_clienți = new ArrayList<>();
+    private Set<Client> listă_clienți = new HashSet<>(Collections.emptySet());
 
     private ClientSingleton() {}
 
@@ -19,11 +19,11 @@ public class ClientSingleton {
         return instanță;
     }
 
-    public List<Client> getClienți() {
+    public Set<Client> getClienți() {
         return listă_clienți;
     }
 
-    public void setClienți(List<Client> listă_clienți) {
+    public void setClienți(Set<Client> listă_clienți) {
         this.listă_clienți = listă_clienți;
     }
 

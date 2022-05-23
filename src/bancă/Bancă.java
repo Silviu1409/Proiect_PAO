@@ -8,17 +8,17 @@ import java.util.*;
 
 public class Bancă {
 
-    protected List<Client> clienți;
+    protected Set<Client> clienți;
     private Adresă adresă;
     private final ClientRepo clientRepo = new ClientRepo();
     private final AdresăRepo adresăRepo = new AdresăRepo();
 
     public Bancă() {
-        clienți = new ArrayList<>();
+        clienți = new HashSet<>(Collections.emptySet());
         this.adresă = new Adresă("Șoseaua Olteniței", 50, "București", "041317");
     }
 
-    public Bancă(List<Client> clienti) {
+    public Bancă(Set<Client> clienti) {
         clienți = clienti;
         this.adresă = new Adresă("Șoseaua Olteniței", 50, "București", "041317");
     }
@@ -188,11 +188,11 @@ public class Bancă {
         return null;
     }
 
-    public List<Client> getClienți() {
+    public Set<Client> getClienți() {
         return clienți;
     }
 
-    public void setClienți(List<Client> clienți) {
+    public void setClienți(Set<Client> clienți) {
         this.clienți = clienți;
     }
 

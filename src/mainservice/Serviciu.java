@@ -272,13 +272,13 @@ public class Serviciu {
         }
     }
 
-    public void setclienți(List<Client> clienți){
+    public void setclienți(Set<Client> clienți){
         bancă.setClienți(clienți);
     }
 
     public void settranzacții(List<Tranzacție> tranzacții){
         for(Tranzacție tranzacție: tranzacții){
-            List<Client> clienți = bancă.getClienți();
+            Set<Client> clienți = bancă.getClienți();
             boolean cont_găsit = false;
             for(Client client: clienți){
                 for(Cont cont: client.getConturi()){
@@ -389,7 +389,7 @@ public class Serviciu {
         }
     }
 
-    public List<Client> getclienți(){
+    public Set<Client> getclienți(){
         return bancă.getClienți();
     }
 
