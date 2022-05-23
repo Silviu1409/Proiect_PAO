@@ -13,7 +13,7 @@
 	<li>
 	Card
 		<ul>
-			<li>normal</li>
+			<li>simplu</li>
 			<li>Visa</li>
 			<li>MasterCard</li>
 		</ul>
